@@ -17,16 +17,27 @@
 
     <?php
 
-        function randomPasswordGen() {
-            $lowercase = "abcdefghijklmnopqrstuvwxyz";
-            $uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            $numbers = "1234567890";
-            $symbols = "~`!@#$%^&*()_-+={[}]|\:;<,>.?/";
-            $all = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890~`!@#$%^&*()_-+={[}]|\:;<,>.?/";
-            $password = [];
-            $length = $_GET["passwordLength"];
+        $length = $_GET["passwordLength"];
+
+    function randomPasswordGen($length){
+        // $lowercase = "abcdefghijklmnopqrstuvwxyz";
+        // $uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        // $numbers = "1234567890";
+        // $symbols = "~`!@#$%^&*()_-+={[}]|\:;<,>.?/";
+        $all = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890~`!@#$%^&*()_-+={[}]|\:;<,>.?/";
+        $password = [];
+        
+
+
+        for ($i = 0; $i < $length; $i++) {
+
+            $rand = rand(0, $length);
+            $password .= $all[$rand];
 
         }
+        return implode($password);
+        
+    }
 
     ?>
     
