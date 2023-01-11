@@ -17,6 +17,17 @@
 
     <?php
 
+        function randomPasswordGen() {
+            $lowercase = "abcdefghijklmnopqrstuvwxyz";
+            $uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            $numbers = "1234567890";
+            $symbols = "~`!@#$%^&*()_-+={[}]|\:;<,>.?/";
+            $all = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890~`!@#$%^&*()_-+={[}]|\:;<,>.?/";
+            $password = [];
+            $length = $_GET["passwordLength"];
+
+        }
+
     ?>
     
 </body>
