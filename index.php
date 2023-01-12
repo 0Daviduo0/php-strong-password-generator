@@ -25,19 +25,12 @@
         // $numbers = "1234567890";
         // $symbols = "~`!@#$%^&*()_-+={[}]|\:;<,>.?/";
         $all = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890~`!@#$%^&*()_-+={[}]|\:;<,>.?/";
-        $password = [];
-        
 
-
-        for ($i = 0; $i < $length; $i++) {
-
-            $rand = rand(0, $length);
-            $password .= $all[$rand];
-
-        }
-        return implode($password);
-        
-    }
+        $shuffle = str_shuffle($all);
+        $password = mb_substr($shuffle, 0, $length);
+        echo $password;
+    };
+    
 
     ?>
     
