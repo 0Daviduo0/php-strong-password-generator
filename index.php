@@ -18,6 +18,15 @@
     <?php
 
         $length = $_GET["passwordLength"];
+        if ($length > 0) {
+            
+            $all = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890~`!@#$%^&*()_-+={[}]|\:;<,>.?/";
+
+            $shuffle = str_shuffle($all);
+            $password = mb_substr($shuffle, 0, $length);
+            echo $password;
+            
+        }
 
     function randomPasswordGen($length){
         // $lowercase = "abcdefghijklmnopqrstuvwxyz";
